@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://b83s56q8susqe"]
+
+[sub_resource type="GDScript" id="GDScript_acmnh"]
+script/source = "extends CharacterBody3D
+
+var STEP = 1.0
+var STEP_DER = 0.4
+
+var tween : Tween
+var timer: Timer
+
+@onready var shape_cast_3d_front: ShapeCast3D = $ShapeCast3DFront
+@onready var shape_cast_3d_2_right: ShapeCast3D = $ShapeCast3D2Right
+@onready var shape_cast_3d_3_back: ShapeCast3D = $ShapeCast3D3Back
+@onready var shape_cast_3d_4_left: ShapeCast3D = $ShapeCast3D4Left
+
+
+func _physics_process(delta: float) -> void:
+	move_and_slide()
+
+func _input(event: InputEvent) -> void:
+	tween = get_tree().create_tween().set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_IN_OUT)
+
+	
+	if Input.is_action_just_pressed(\"up\") && ! shape_cast_3d_front.is_colliding():
+		tween.tween_property(self,\"position\", (position + STEP * -self.get_global_transform().basis.z), STEP_DER)
+	if Input.is_action_just_pressed(\"down\") && ! shape_cast_3d_3_back.is_colliding():
+		tween.tween_property(self,\"position\", (position + STEP * self.get_global_transform().basis.z), STEP_DER)
+	if Input.is_action_just_pressed(\"strafeleft\") && ! shape_cast_3d_4_left.is_colliding():
+		pass
+	if Input.is_action_just_pressed(\"straferight\") && ! shape_cast_3d_2_right.is_colliding():
+		pass
+"
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3eola"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0bb2n"]
+
+[node name="Player" type="CharacterBody3D" unique_id=1035112171]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+script = SubResource("GDScript_acmnh")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1030101090]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.53420603, 0)
+
+[node name="PlayerBody" type="CollisionShape3D" parent="." unique_id=1191714145]
+shape = SubResource("CapsuleShape3D_3eola")
+
+[node name="ShapeCast3DFront" type="ShapeCast3D" parent="." unique_id=700072749]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+shape = SubResource("BoxShape3D_0bb2n")
+
+[node name="ShapeCast3D2Right" type="ShapeCast3D" parent="." unique_id=1729459791]
+transform = Transform3D(-4.371139e-08, -1, 4.371139e-08, 0, -4.371139e-08, -1, 1, -4.371139e-08, 1.9106855e-15, 0, 0, 0)
+shape = SubResource("BoxShape3D_0bb2n")
+
+[node name="ShapeCast3D3Back" type="ShapeCast3D" parent="." unique_id=363994015]
+transform = Transform3D(-1, 8.742278e-08, -3.821371e-15, 0, -4.371139e-08, -1, -8.742278e-08, -1, 4.371139e-08, 0, 0, 0)
+shape = SubResource("BoxShape3D_0bb2n")
+
+[node name="ShapeCast3D4Left" type="ShapeCast3D" parent="." unique_id=1129939471]
+transform = Transform3D(1.3113416e-07, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, 1.3113416e-07, -5.7320566e-15, 0, 0, 0)
+shape = SubResource("BoxShape3D_0bb2n")

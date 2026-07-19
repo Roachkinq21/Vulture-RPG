@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://qf622bs5ydt0"]
+
+[node name="CaracterCard" type="Control" unique_id=1228532996]
+layout_mode = 3
+anchors_preset = 0
+scale = Vector2(1.8705987, 1.8705987)
+
+[node name="BG" type="ColorRect" parent="." unique_id=598864402]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -243.0
+offset_top = -61.0
+grow_horizontal = 0
+grow_vertical = 0
+color = Color(0.27084458, 2.2079983e-06, 0.18186057, 1)
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=2092041541]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -248.0
+offset_top = -16.0
+offset_right = -60.0
+grow_horizontal = 0
+grow_vertical = 0
+value = 85.21
+fill_mode = 1
+show_percentage = false
+
+[node name="ProgressBar2" type="ProgressBar" parent="." unique_id=1143274098]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -248.0
+offset_top = -32.0
+offset_right = -60.0
+offset_bottom = -16.0
+grow_horizontal = 0
+grow_vertical = 0
+value = 85.21
+fill_mode = 1
+show_percentage = false
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1503848659]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -83.0
+offset_top = -87.0
+grow_horizontal = 0
+grow_vertical = 0
+color = Color(0.7583658, 0, 0.4213237, 1)

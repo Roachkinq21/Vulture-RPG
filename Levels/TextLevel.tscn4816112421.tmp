@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://b5x5jlodk5csi"]
+
+[ext_resource type="MeshLibrary" uid="uid://dvquf0kdg8nle" path="res://Models/tilemap.tres" id="1_r6bal"]
+[ext_resource type="PackedScene" uid="uid://b83s56q8susqe" path="res://Prefabs/player.tscn" id="2_0f7bk"]
+
+[sub_resource type="GDScript" id="GDScript_r6bal"]
+script/source = "extends Node
+
+@export_enum(\"Safe:20\", \"Risky:10\", \"Dangerous:5\") var level : int 
+
+func _ready() -> void:
+	print(level)
+"
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r6bal"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+energy_multiplier = 3.0
+
+[sub_resource type="Sky" id="Sky_0f7bk"]
+sky_material = SubResource("ProceduralSkyMaterial_r6bal")
+
+[sub_resource type="Environment" id="Environment_8pw54"]
+background_mode = 2
+sky = SubResource("Sky_0f7bk")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="World" type="Node3D" unique_id=1499304377]
+script = SubResource("GDScript_r6bal")
+level = 5
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1913191853]
+environment = SubResource("Environment_8pw54")
+
+[node name="GridMap" type="GridMap" parent="." unique_id=123845873]
+mesh_library = ExtResource("1_r6bal")
+cell_center_y = false
+data = {
+"cells": PackedInt32Array(65535, 0, 0, 0, 0, 0, 0, 65535, 0, 65535, 65535, 5, 65534, 65534, 1, 65535, 65534, 1, 65533, 65535, 1048577, 65535, 1, 655361, 0, 1, 1441792, 1, 0, 0, 2, 0, 1, 3, 0, 1, 4, 0, 1, 3, 1, 1441792, 4, 1, 5, 2, 1, 1441797, 2, 2, 655361, 3, 2, 655361, 4, 2, 655360, 1, 2, 655361, 1, 1, 1048581, 1, 65535, 1441793, 1, 65534, 1441794, 0, 65534, 1, 65533, 1, 1048578, 65533, 0, 1048577, 65534, 2, 655361, 65534, 1, 655361, 65533, 65534, 2, 65534, 65535, 0, 65534, 0, 0, 0, 2, 1048578, 5, 2, 655362, 5, 0, 1441794, 5, 1, 1441793, 4, 3, 655363, 4, 4, 655363, 4, 5, 1441792, 4, 6, 655360, 5, 6, 1441793, 5, 7, 1441793, 4, 7, 655360, 3, 7, 1048577, 3, 6, 1048577, 3, 8, 1048577, 4, 8, 655360, 5, 8, 1441793, 4, 9, 655360, 4, 10, 655360, 4, 11, 655360, 4, 12, 655360, 4, 13, 655360, 3, 9, 1048577, 3, 10, 1441792, 3, 11, 1048577, 3, 12, 1048577, 3, 13, 1048577, 5, 9, 1441793, 5, 10, 0, 5, 11, 1441793, 5, 12, 1441793, 5, 13, 1441793, 5, 14, 1441793, 3, 14, 1048577, 4, 14, 655360, 3, 5, 2, 5, 5, 1441794, 4, 15, 1441797, 2, 15, 1, 1, 15, 1, 0, 15, 1, 6, 15, 1, 7, 15, 1, 8, 15, 1, 2, 16, 655361, 1, 16, 655361, 0, 16, 655361, 6, 16, 655361, 7, 16, 655361, 8, 16, 655361, 3, 16, 655361, 4, 16, 655361, 5, 16, 655361, 3, 15, 655360, 5, 15, 655360, 6, 10, 1441795, 7, 10, 1441795, 8, 10, 1441795, 9, 10, 1441795, 2, 10, 1441795, 1, 10, 1441795, 0, 10, 1441795, 65535, 10, 1441795)
+}
+
+[node name="Player" parent="." unique_id=1035112171 instance=ExtResource("2_0f7bk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, 0)

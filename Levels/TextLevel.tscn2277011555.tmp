@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://b5x5jlodk5csi"]
+
+[ext_resource type="MeshLibrary" uid="uid://dvquf0kdg8nle" path="res://Models/tilemap.tres" id="1_r6bal"]
+[ext_resource type="PackedScene" uid="uid://b83s56q8susqe" path="res://Prefabs/player.tscn" id="2_0f7bk"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r6bal"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+energy_multiplier = 3.0
+
+[sub_resource type="Sky" id="Sky_0f7bk"]
+sky_material = SubResource("ProceduralSkyMaterial_r6bal")
+
+[sub_resource type="Environment" id="Environment_8pw54"]
+background_mode = 2
+sky = SubResource("Sky_0f7bk")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Node3D" type="Node3D" unique_id=1499304377]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1913191853]
+environment = SubResource("Environment_8pw54")
+
+[node name="GridMap" type="GridMap" parent="." unique_id=123845873]
+mesh_library = ExtResource("1_r6bal")
+cell_center_y = false
+data = {
+"cells": PackedInt32Array(65535, 0, 0, 0, 0, 0, 0, 65535, 0, 65535, 65535, 1441793, 65534, 65534, 2, 65535, 65534, 1, 65533, 65535, 1048577, 65535, 1, 655361, 0, 1, 655361, 1, 0, 1048579, 2, 0, 1048579, 3, 0, 1, 4, 0, 1441794, 3, 1, 1441792, 4, 1, 1441792, 2, 1, 1441792, 2, 2, 655361, 3, 2, 655361, 4, 2, 655361, 1, 2, 655361, 1, 1, 1048577, 1, 65535, 1441793, 1, 65534, 1441794, 0, 65534, 1, 65533, 1, 1048578, 65533, 0, 1048577, 65534, 2, 655361, 65534, 1, 655361, 65533, 65534, 2, 65534, 65535, 0, 65534, 0, 0, 0, 2, 4, 5, 2, 655362, 5, 0, 1441794, 5, 1, 1441793)
+}
+
+[node name="Player" parent="GridMap" unique_id=1035112171 instance=ExtResource("2_0f7bk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, 1)
