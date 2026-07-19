@@ -3,7 +3,6 @@
 [node name="CaracterCard" type="Control" unique_id=1228532996]
 layout_mode = 3
 anchors_preset = 0
-scale = Vector2(1.8705987, 1.8705987)
 
 [node name="BG" type="ColorRect" parent="." unique_id=598864402]
 layout_mode = 1

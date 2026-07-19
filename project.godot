@@ -11,8 +11,14 @@ config_version=5
 [application]
 
 config/name="Vulture Hospital"
+config/tags=PackedStringArray("dungeon_craw")
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/mode=2
+window/stretch/mode="canvas_items"
 
 [dotnet]
 

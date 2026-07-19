@@ -6,10 +6,12 @@
 [sub_resource type="GDScript" id="GDScript_r6bal"]
 script/source = "extends Node
 
+@export var is_hostile : bool
 @export_enum(\"Safe:20\", \"Risky:10\", \"Dangerous:5\") var level : int 
 
+
 func _ready() -> void:
-	print(level)
+	pass
 "
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r6bal"]
@@ -28,7 +30,8 @@ glow_enabled = true
 
 [node name="World" type="Node3D" unique_id=1499304377]
 script = SubResource("GDScript_r6bal")
-level = 5
+is_hostile = true
+level = 20
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1913191853]
 environment = SubResource("Environment_8pw54")
