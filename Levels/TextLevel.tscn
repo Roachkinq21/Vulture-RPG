@@ -1,18 +1,8 @@
 [gd_scene format=3 uid="uid://b5x5jlodk5csi"]
 
+[ext_resource type="Script" uid="uid://nckeynsmco3l" path="res://Scripts/World_Script.gd" id="1_0f7bk"]
 [ext_resource type="MeshLibrary" uid="uid://dvquf0kdg8nle" path="res://Models/tilemap.tres" id="1_r6bal"]
 [ext_resource type="PackedScene" uid="uid://b83s56q8susqe" path="res://Prefabs/player.tscn" id="2_0f7bk"]
-
-[sub_resource type="GDScript" id="GDScript_r6bal"]
-script/source = "extends Node
-
-@export var is_hostile : bool
-@export_enum(\"Safe:20\", \"Risky:10\", \"Dangerous:5\") var level : int 
-
-
-func _ready() -> void:
-	pass
-"
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r6bal"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -29,9 +19,7 @@ tonemap_mode = 2
 glow_enabled = true
 
 [node name="World" type="Node3D" unique_id=1499304377]
-script = SubResource("GDScript_r6bal")
-is_hostile = true
-level = 20
+script = ExtResource("1_0f7bk")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1913191853]
 environment = SubResource("Environment_8pw54")

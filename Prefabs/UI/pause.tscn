@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://gl0o3q7k3olh" path="res://Prefabs/UI/main.tres" id="1_v6ugb"]
 
-[node name="Control" type="Control" unique_id=585479524]
+[node name="PauseMenu" type="Control" unique_id=585479524]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,33 +11,151 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_v6ugb")
 
-[node name="Panel" type="Panel" parent="." unique_id=1510593169]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 24.0
-offset_top = 24.0
-offset_right = -42.0
-offset_bottom = -41.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel" unique_id=1802548090]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1981623450]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-alignment = 1
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/HBoxContainer" unique_id=1550200663]
+[node name="ColorRect" type="ColorRect" parent="MarginContainer" unique_id=574755540]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/ColorRect" unique_id=483516673]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ColorRect/MarginContainer" unique_id=1820210818]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Panel/HBoxContainer/VBoxContainer" unique_id=2113185044]
+[node name="Label" type="Label" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer" unique_id=1210285165]
 layout_mode = 2
-text = "Music"
+text = "Settings"
 
-[node name="HSlider" type="HSlider" parent="Panel/HBoxContainer/VBoxContainer" unique_id=1731589271]
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer" unique_id=1653348907]
 layout_mode = 2
+
+[node name="TabContainer" type="TabContainer" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer" unique_id=1040316077]
+layout_mode = 2
+current_tab = 1
+
+[node name="Gameplay" type="VBoxContainer" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/TabContainer" unique_id=1156639640]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/TabContainer/Gameplay" unique_id=2129660736]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/TabContainer/Gameplay/VBoxContainer" unique_id=441780107]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Label" type="Label" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/TabContainer/Gameplay/VBoxContainer/HBoxContainer" unique_id=1612602166]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+text = "Difficulty"
+horizontal_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/TabContainer/Gameplay/VBoxContainer/HBoxContainer" unique_id=1601796616]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="MenuButton" type="MenuButton" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/TabContainer/Gameplay/VBoxContainer/HBoxContainer/CenterContainer" unique_id=1842796256]
+layout_mode = 2
+text = "Choose"
+item_count = 3
+popup/item_0/text = "Easy"
+popup/item_0/id = 0
+popup/item_1/text = "Normal"
+popup/item_1/id = 1
+popup/item_2/text = "Hard"
+popup/item_2/id = 2
+
+[node name="Graphics" type="VBoxContainer" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/TabContainer" unique_id=1611705696]
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/TabContainer/Graphics" unique_id=1814063891]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/TabContainer/Graphics/VBoxContainer" unique_id=1217879990]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/TabContainer/Graphics/VBoxContainer/HBoxContainer" unique_id=152507196]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+text = "SSR"
+horizontal_alignment = 1
+
+[node name="SSRButton" type="CheckButton" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/TabContainer/Graphics/VBoxContainer/HBoxContainer" unique_id=195352208]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/TabContainer/Graphics" unique_id=1865748392]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/TabContainer/Graphics/VBoxContainer2" unique_id=1002031647]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/TabContainer/Graphics/VBoxContainer2/HBoxContainer" unique_id=720854632]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+text = "SSAO"
+horizontal_alignment = 1
+
+[node name="SSAOButton" type="CheckButton" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/TabContainer/Graphics/VBoxContainer2/HBoxContainer" unique_id=1296119092]
+layout_mode = 2
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/TabContainer/Graphics" unique_id=373252946]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/TabContainer/Graphics/VBoxContainer3" unique_id=1728974020]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/TabContainer/Graphics/VBoxContainer3/HBoxContainer" unique_id=2113133949]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+text = "SSIL"
+horizontal_alignment = 1
+
+[node name="SSILButton" type="CheckButton" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/TabContainer/Graphics/VBoxContainer3/HBoxContainer" unique_id=566253789]
+layout_mode = 2
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/TabContainer/Graphics" unique_id=1043066551]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/TabContainer/Graphics/VBoxContainer4" unique_id=349736214]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/TabContainer/Graphics/VBoxContainer4/HBoxContainer" unique_id=195152324]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+text = "SDFGI"
+horizontal_alignment = 1
+
+[node name="SDFGIButton" type="CheckButton" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/TabContainer/Graphics/VBoxContainer4/HBoxContainer" unique_id=1108719556]
+layout_mode = 2
+
+[node name="Audio" type="VBoxContainer" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/TabContainer" unique_id=1047555108]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="Controls" type="VBoxContainer" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/TabContainer" unique_id=357121387]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 3

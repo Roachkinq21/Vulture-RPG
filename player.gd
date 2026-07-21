@@ -25,7 +25,7 @@ var latest_encounter : int
 @onready var camera_3d: Camera3D = $Camera3D
 @onready var world: Node3D = $".."
 
-
+@onready var pauseMenu: Control = $PauseMenu
 
 func _ready() -> void:
 	in_hostile_zone = world.is_hostile
@@ -34,6 +34,8 @@ func _ready() -> void:
 	encounter_rate = world.level
 	print(encounter_rate)
 	print(in_hostile_zone)
+
+	pauseMenu.hide()
 	
 	
 func _physics_process(delta: float) -> void:
@@ -75,6 +77,12 @@ func _input(event: InputEvent) -> void:
 		tween.tween_property(self, "rotation_degrees:y", self.rotation_degrees.y - ROTATE, STEP_DER)
 
 
+	## UTILITY FUNCTIONS ##
+
+	if Input.is_action_pressed("pause"):
+		pauseMenu.show()
+
+
 func _check_encounter():
 	if !fero && in_hostile_zone:
 		var encounter_chance = randi_range(1,encounter_rate)
@@ -85,6 +93,7 @@ func _check_encounter():
 		if encounter_chance == 1:
 			print("ENEMY ENCOUNTERED!!!")
 		latest_encounter = encounter_chance
+	
 
 func _item_tick():
 	if fero:
