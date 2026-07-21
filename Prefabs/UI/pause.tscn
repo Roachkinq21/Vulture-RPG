@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dbq5gh85wckc1"]
 
 [ext_resource type="Theme" uid="uid://gl0o3q7k3olh" path="res://Prefabs/UI/main.tres" id="1_v6ugb"]
+[ext_resource type="Script" uid="uid://ctunhs72glolq" path="res://Prefabs/UI/pause.gd" id="2_iy28j"]
 
 [node name="PauseMenu" type="Control" unique_id=585479524]
 layout_mode = 3
@@ -10,6 +11,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_v6ugb")
+script = ExtResource("2_iy28j")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1981623450]
 layout_mode = 1
@@ -25,7 +27,7 @@ theme_override_constants/margin_bottom = 30
 
 [node name="ColorRect" type="ColorRect" parent="MarginContainer" unique_id=574755540]
 layout_mode = 2
-color = Color(0, 0, 0, 1)
+color = Color(0.12026545, 0.08305665, 0.14094481, 0.7921569)
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/ColorRect" unique_id=483516673]
 layout_mode = 1
@@ -159,3 +161,8 @@ metadata/_tab_index = 2
 visible = false
 layout_mode = 2
 metadata/_tab_index = 3
+
+[connection signal="toggled" from="MarginContainer/ColorRect/MarginContainer/VBoxContainer/TabContainer/Graphics/VBoxContainer/HBoxContainer/SSRButton" to="." method="_on_ssr_button_toggled"]
+[connection signal="toggled" from="MarginContainer/ColorRect/MarginContainer/VBoxContainer/TabContainer/Graphics/VBoxContainer2/HBoxContainer/SSAOButton" to="." method="_on_ssao_button_toggled"]
+[connection signal="toggled" from="MarginContainer/ColorRect/MarginContainer/VBoxContainer/TabContainer/Graphics/VBoxContainer3/HBoxContainer/SSILButton" to="." method="_on_ssil_button_toggled"]
+[connection signal="toggled" from="MarginContainer/ColorRect/MarginContainer/VBoxContainer/TabContainer/Graphics/VBoxContainer4/HBoxContainer/SDFGIButton" to="." method="_on_sdfgi_button_toggled"]

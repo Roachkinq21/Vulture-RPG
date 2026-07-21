@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://nckeynsmco3l" path="res://Scripts/World_Script.gd" id="1_0f7bk"]
 [ext_resource type="MeshLibrary" uid="uid://dvquf0kdg8nle" path="res://Models/tilemap.tres" id="1_r6bal"]
 [ext_resource type="PackedScene" uid="uid://b83s56q8susqe" path="res://Prefabs/player.tscn" id="2_0f7bk"]
+[ext_resource type="Script" uid="uid://ctksb88u3gtk" path="res://Levels/world_environment.gd" id="2_8pw54"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r6bal"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -13,16 +14,25 @@ energy_multiplier = 3.0
 sky_material = SubResource("ProceduralSkyMaterial_r6bal")
 
 [sub_resource type="Environment" id="Environment_8pw54"]
-background_mode = 2
+background_energy_multiplier = 2.22
 sky = SubResource("Sky_0f7bk")
 tonemap_mode = 2
-glow_enabled = true
+ssr_fade_in = 0.47075015
+ssr_fade_out = 2.7320802
+ssao_power = 1.7230467
+ssao_detail = 2.55
+ssao_horizon = 0.07
+ssao_sharpness = 0.44
+ssao_light_affect = 0.17
+ssil_radius = 1.52
+ssil_intensity = 0.41
 
 [node name="World" type="Node3D" unique_id=1499304377]
 script = ExtResource("1_0f7bk")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1913191853]
 environment = SubResource("Environment_8pw54")
+script = ExtResource("2_8pw54")
 
 [node name="GridMap" type="GridMap" parent="." unique_id=123845873]
 mesh_library = ExtResource("1_r6bal")

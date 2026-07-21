@@ -27,6 +27,8 @@ var latest_encounter : int
 
 @onready var pauseMenu: Control = $PauseMenu
 
+var pause_is_on : bool
+
 func _ready() -> void:
 	in_hostile_zone = world.is_hostile
 	fero = false
@@ -79,8 +81,13 @@ func _input(event: InputEvent) -> void:
 
 	## UTILITY FUNCTIONS ##
 
-	if Input.is_action_pressed("pause"):
-		pauseMenu.show()
+	if Input.is_action_just_pressed("pause"):
+		if !pause_is_on:
+			pauseMenu.show()
+			pause_is_on = true
+		else:
+			pauseMenu.hide()
+			pause_is_on = false
 
 
 func _check_encounter():
