@@ -14,7 +14,9 @@ energy_multiplier = 3.0
 sky_material = SubResource("ProceduralSkyMaterial_r6bal")
 
 [sub_resource type="Environment" id="Environment_8pw54"]
-background_energy_multiplier = 2.22
+background_mode = 1
+background_color = Color(0.05319383, 0.0037927874, 0.104888774, 1)
+background_energy_multiplier = 1.72
 sky = SubResource("Sky_0f7bk")
 tonemap_mode = 2
 ssr_fade_in = 0.47075015
@@ -26,6 +28,12 @@ ssao_sharpness = 0.44
 ssao_light_affect = 0.17
 ssil_radius = 1.52
 ssil_intensity = 0.41
+sdfgi_enabled = true
+sdfgi_bounce_feedback = 0.2
+sdfgi_cascades = 2
+sdfgi_min_cell_size = 3.9964843
+sdfgi_y_scale = 0
+sdfgi_energy = 0.09
 
 [node name="World" type="Node3D" unique_id=1499304377]
 script = ExtResource("1_0f7bk")
