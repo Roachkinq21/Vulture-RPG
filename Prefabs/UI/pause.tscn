@@ -2,6 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://gl0o3q7k3olh" path="res://Prefabs/UI/main.tres" id="1_v6ugb"]
 [ext_resource type="Script" uid="uid://ctunhs72glolq" path="res://Prefabs/UI/pause.gd" id="2_iy28j"]
+[ext_resource type="PackedScene" uid="uid://m47nk2fr43t6" path="res://Audio/sound_manager.tscn" id="3_qy5r6"]
 
 [node name="PauseMenu" type="Control" unique_id=585479524]
 layout_mode = 3
@@ -53,7 +54,7 @@ layout_mode = 2
 
 [node name="TabContainer" type="TabContainer" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer" unique_id=1040316077]
 layout_mode = 2
-current_tab = 1
+current_tab = 3
 
 [node name="Gameplay" type="VBoxContainer" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/TabContainer" unique_id=1156639640]
 visible = false
@@ -89,6 +90,7 @@ popup/item_2/text = "Hard"
 popup/item_2/id = 2
 
 [node name="Graphics" type="VBoxContainer" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/TabContainer" unique_id=1611705696]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
@@ -158,9 +160,17 @@ layout_mode = 2
 metadata/_tab_index = 2
 
 [node name="Controls" type="VBoxContainer" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/TabContainer" unique_id=357121387]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 3
+
+[node name="Exit" type="Button" parent="MarginContainer" unique_id=2005996427]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "Exit"
+
+[node name="SoundManager" parent="." unique_id=802041801 instance=ExtResource("3_qy5r6")]
+root_path = NodePath("..")
 
 [connection signal="toggled" from="MarginContainer/ColorRect/MarginContainer/VBoxContainer/TabContainer/Graphics/VBoxContainer/HBoxContainer/SSRButton" to="." method="_on_ssr_button_toggled"]
 [connection signal="toggled" from="MarginContainer/ColorRect/MarginContainer/VBoxContainer/TabContainer/Graphics/VBoxContainer2/HBoxContainer/SSAOButton" to="." method="_on_ssao_button_toggled"]

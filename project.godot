@@ -15,13 +15,17 @@ config/tags=PackedStringArray("dungeon_craw")
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://che7jejowsxii"
+
 [autoload]
 
 WorldSettings="*uid://ps8luwl0db10"
+BattleManager="*uid://dd5w26obbxu6m"
 
 [display]
 
-window/size/mode=2
 window/stretch/mode="canvas_items"
 
 [dotnet]
@@ -31,6 +35,7 @@ project/assembly_name="Vulture Hospital"
 [file_customization]
 
 folder_colors={
+"res://Audio/SFX/": "red",
 "res://Prefabs/UI/": "green",
 "res://Scripts/Global/": "pink"
 }

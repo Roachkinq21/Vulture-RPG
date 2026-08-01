@@ -37,7 +37,8 @@ func _ready() -> void:
 	print(encounter_rate)
 	print(in_hostile_zone)
 
-	pauseMenu.hide()
+	pause_is_on = false
+	pauseMenu.offset_transform_position_ratio.y = 1
 	
 	
 func _physics_process(delta: float) -> void:
@@ -60,6 +61,10 @@ func _input(event: InputEvent) -> void:
 	elif Input.is_action_pressed("down") and not shape_cast_3d_3_back.is_colliding():
 		tween = get_tree().create_tween().set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_IN_OUT)
 		tween.tween_property(self,"position", (position + STEP * self.get_global_transform().basis.z), STEP_DER)
+		
+		await tween.finished
+		_check_encounter()
+		_item_tick()
 	
 	elif Input.is_action_pressed("strafeleft") and not shape_cast_3d_4_left.is_colliding():
 		tween = get_tree().create_tween().set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_IN_OUT)
@@ -83,10 +88,12 @@ func _input(event: InputEvent) -> void:
 
 	if Input.is_action_just_pressed("pause"):
 		if !pause_is_on:
-			pauseMenu.show()
+			tween = get_tree().create_tween().set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_IN_OUT)
+			tween.tween_property(pauseMenu, "offset_transform_position_ratio:y", 0, 1)
 			pause_is_on = true
 		else:
-			pauseMenu.hide()
+			tween = get_tree().create_tween().set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_IN_OUT)
+			tween.tween_property(pauseMenu, "offset_transform_position_ratio:y", 1, 1)
 			pause_is_on = false
 
 
@@ -99,6 +106,7 @@ func _check_encounter():
 		print(encounter_chance)
 		if encounter_chance == 1:
 			print("ENEMY ENCOUNTERED!!!")
+			BattleManager.enter_battle()
 		latest_encounter = encounter_chance
 	
 
