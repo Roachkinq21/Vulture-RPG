@@ -174,8 +174,6 @@ horizontal_alignment = 1
 [node name="Master_Bus" type="HSlider" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/TabContainer/Audio/VBoxContainer/HBoxContainer" unique_id=1072693836]
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
-tick_count = 9
-ticks_position = 3
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/TabContainer/Audio" unique_id=36909466]
 layout_mode = 2
@@ -194,7 +192,6 @@ horizontal_alignment = 1
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 tick_count = 9
-ticks_position = 3
 
 [node name="Controls" type="VBoxContainer" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/TabContainer" unique_id=357121387]
 visible = false

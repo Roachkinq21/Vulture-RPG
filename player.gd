@@ -38,6 +38,7 @@ func _ready() -> void:
 	print(in_hostile_zone)
 
 	pause_is_on = false
+	pauseMenu.hide()
 	pauseMenu.offset_transform_position_ratio.y = 1
 	
 	
@@ -88,12 +89,16 @@ func _input(event: InputEvent) -> void:
 
 	if Input.is_action_just_pressed("pause"):
 		if !pause_is_on:
+			pauseMenu.show()
 			tween = get_tree().create_tween().set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_IN_OUT)
 			tween.tween_property(pauseMenu, "offset_transform_position_ratio:y", 0, 1)
+			await tween.finished
 			pause_is_on = true
 		else:
 			tween = get_tree().create_tween().set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_IN_OUT)
 			tween.tween_property(pauseMenu, "offset_transform_position_ratio:y", 1, 1)
+			await tween.finished
+			pauseMenu.hide()
 			pause_is_on = false
 
 
