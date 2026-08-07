@@ -52,3 +52,6 @@ data = {
 
 [node name="Player" parent="." unique_id=1035112171 instance=ExtResource("2_0f7bk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, 0)
+
+[node name="BattleScene" type="Node3D" parent="." unique_id=246454736]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 6, 16)

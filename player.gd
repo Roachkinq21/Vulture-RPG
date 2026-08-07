@@ -90,7 +90,7 @@ func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("pause"):
 		if !pause_is_on:
 			pauseMenu.show()
-			tween = get_tree().create_tween().set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_IN_OUT)
+			tween = get_tree().create_tween().set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_OUT)
 			tween.tween_property(pauseMenu, "offset_transform_position_ratio:y", 0, 1)
 			await tween.finished
 			pause_is_on = true

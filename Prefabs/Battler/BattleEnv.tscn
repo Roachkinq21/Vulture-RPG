@@ -1,6 +1,24 @@
 [gd_scene format=3 uid="uid://b8ifdkaywqjhd"]
 
+[ext_resource type="Script" uid="uid://viahorj6axry" path="res://Prefabs/Battler/battle_env.gd" id="1_5cned"]
+
 [node name="Node3D" type="Node3D" unique_id=467336143]
+script = ExtResource("1_5cned")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1403896145]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+
+[node name="SingleEnemy" type="Node3D" parent="." unique_id=1188389267]
+
+[node name="single1" type="Marker3D" parent="SingleEnemy" unique_id=746662831]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+
+[node name="TwoEnemies" type="Node3D" parent="." unique_id=1191219577]
+
+[node name="double1" type="Marker3D" parent="TwoEnemies" unique_id=2022165398]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 0, 0)
+
+[node name="double2" type="Marker3D" parent="TwoEnemies" unique_id=931136817]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1081213850]
