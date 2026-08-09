@@ -16,7 +16,7 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -243.0
-offset_top = -61.0
+offset_top = -32.0
 grow_horizontal = 0
 grow_vertical = 0
 color = Color(0.27084458, 2.2079983e-06, 0.18186057, 1)
@@ -62,12 +62,13 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -83.0
-offset_top = -87.0
+offset_top = -40.0
 grow_horizontal = 0
 grow_vertical = 0
 color = Color(0.7583658, 0, 0.4213237, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="ColorRect" unique_id=1426555555]
-position = Vector2(29.710917, 31.550007)
+position = Vector2(51, -16)
+rotation = -0.04175153
 scale = Vector2(0.13945746, 0.13945746)
 texture = ExtResource("2_fohjj")

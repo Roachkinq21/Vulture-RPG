@@ -25,9 +25,21 @@ var latest_encounter : int
 @onready var camera_3d: Camera3D = $Camera3D
 @onready var world: Node3D = $".."
 
-@onready var pauseMenu: Control = $PauseMenu
+@onready var pauseMenu: Control = $CanvasLayer/PauseMenu
+
+@onready var party_manager : Node = $Party_Manager
 
 var pause_is_on : bool
+
+
+#region ## PARTY SETTINGS ##
+
+@export var party : Array = []
+
+#endregion
+
+
+
 
 func _ready() -> void:
 	in_hostile_zone = world.is_hostile
@@ -40,6 +52,11 @@ func _ready() -> void:
 	pause_is_on = false
 	pauseMenu.hide()
 	pauseMenu.offset_transform_position_ratio.y = 1
+
+	if party_manager.get_child_count() > 0 :
+
+		for i in party:
+			party_manager.append(i)
 	
 	
 func _physics_process(delta: float) -> void:
@@ -83,6 +100,11 @@ func _input(event: InputEvent) -> void:
 	elif Input.is_action_pressed("right"):
 		tween = get_tree().create_tween().set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_IN_OUT)
 		tween.tween_property(self, "rotation_degrees:y", self.rotation_degrees.y - ROTATE, STEP_DER)
+
+
+
+
+	#DEBUG
 
 
 	## UTILITY FUNCTIONS ##

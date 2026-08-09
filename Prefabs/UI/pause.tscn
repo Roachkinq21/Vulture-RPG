@@ -54,7 +54,7 @@ layout_mode = 2
 
 [node name="TabContainer" type="TabContainer" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer" unique_id=1040316077]
 layout_mode = 2
-current_tab = 2
+current_tab = 1
 
 [node name="Gameplay" type="VBoxContainer" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/TabContainer" unique_id=1156639640]
 visible = false
@@ -90,7 +90,6 @@ popup/item_2/text = "Hard"
 popup/item_2/id = 2
 
 [node name="Graphics" type="VBoxContainer" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/TabContainer" unique_id=1611705696]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
@@ -155,7 +154,9 @@ horizontal_alignment = 1
 layout_mode = 2
 
 [node name="Audio" type="VBoxContainer" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/TabContainer" unique_id=1047555108]
+visible = false
 layout_mode = 2
+theme_override_constants/separation = 15
 metadata/_tab_index = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/TabContainer/Audio" unique_id=1480143724]
@@ -174,7 +175,9 @@ horizontal_alignment = 1
 [node name="Master_Bus" type="HSlider" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/TabContainer/Audio/VBoxContainer/HBoxContainer" unique_id=1072693836]
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
-value = 50.0
+max_value = 3.0
+step = 0.1
+value = 1.0
 tick_count = 9
 ticks_position = 3
 
@@ -194,7 +197,9 @@ horizontal_alignment = 1
 [node name="SFX_Bus" type="HSlider" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/TabContainer/Audio/VBoxContainer2/HBoxContainer" unique_id=348669160]
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
-value = 50.0
+max_value = 3.0
+step = 0.1
+value = 1.0
 tick_count = 9
 ticks_position = 3
 

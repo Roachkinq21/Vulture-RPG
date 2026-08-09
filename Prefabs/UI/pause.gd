@@ -18,6 +18,8 @@ func _ready() -> void:
 	master_bus.value = Config.get_master_volume()
 	sfx_bus.value = Config.get_SFX_volume()
 
+	
+
 
 
 func _on_ssr_button_toggled(toggled_on: bool) -> void:

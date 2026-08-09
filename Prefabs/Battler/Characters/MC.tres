@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Battler" format=3 uid="uid://c6kjgj8bf6fso"]
+
+[ext_resource type="Script" uid="uid://dhq7enjhbgyhd" path="res://Prefabs/Battler/Battler/Battler.gd" id="1_vq5p6"]
+
+[resource]
+script = ExtResource("1_vq5p6")
+is_player = true
+metadata/_custom_type_script = "uid://dhq7enjhbgyhd"
