@@ -36,9 +36,12 @@ project/assembly_name="Vulture Hospital"
 [file_customization]
 
 folder_colors={
+"res://Audio/": "red",
 "res://Audio/SFX/": "red",
-"res://Prefabs/UI/": "green",
-"res://Scripts/Global/": "pink"
+"res://Levels/": "pink",
+"res://Scripts/": "blue",
+"res://Scripts/Global/": "pink",
+"res://UI/": "green"
 }
 
 [input]

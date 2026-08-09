@@ -6,7 +6,7 @@
 script = ExtResource("1_5cned")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1403896145]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
 
 [node name="SingleEnemy" type="Node3D" parent="." unique_id=1188389267]
 
@@ -14,6 +14,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
 
 [node name="TwoEnemies" type="Node3D" parent="." unique_id=1191219577]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
 
 [node name="double1" type="Marker3D" parent="TwoEnemies" unique_id=2022165398]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 0, 0)

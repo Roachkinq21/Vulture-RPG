@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://knib70isfc4w"]
+
+[ext_resource type="Theme" uid="uid://gl0o3q7k3olh" path="res://UI/main.tres" id="1_0gkxt"]
+
+[node name="PartyMenu" type="Control" unique_id=2085440159]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_0gkxt")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=543130071]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="Panel" type="Panel" parent="MarginContainer" unique_id=1685520513]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel" unique_id=528592898]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="BoxContainer" type="BoxContainer" parent="MarginContainer/Panel/MarginContainer" unique_id=304753779]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/BoxContainer" unique_id=1715531558]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MarginContainer/Panel/MarginContainer/BoxContainer/VBoxContainer" unique_id=402880743]
+layout_mode = 2
+text = "Party"
+
+[node name="Button2" type="Button" parent="MarginContainer/Panel/MarginContainer/BoxContainer/VBoxContainer" unique_id=418161980]
+layout_mode = 2
+
+[node name="Button3" type="Button" parent="MarginContainer/Panel/MarginContainer/BoxContainer/VBoxContainer" unique_id=1930033056]
+layout_mode = 2
+
+[node name="Button4" type="Button" parent="MarginContainer/Panel/MarginContainer/BoxContainer/VBoxContainer" unique_id=1481868787]
+layout_mode = 2
