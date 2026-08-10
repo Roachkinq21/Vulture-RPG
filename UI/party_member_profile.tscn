@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://crcdvuw1c688i"]
+
+[ext_resource type="Theme" uid="uid://gl0o3q7k3olh" path="res://UI/main.tres" id="1_a5jps"]
+[ext_resource type="Texture2D" uid="uid://b61j6ghkhm4fk" path="res://UI/Double/Transparent center/panel-transparent-center-027.png" id="2_wo4hx"]
+
+[node name="PartyMemberProfile" type="Control" unique_id=1934235317]
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_a5jps")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=473314335]
+layout_mode = 1
+offset_right = 136.0
+offset_bottom = 136.0
+texture = ExtResource("2_wo4hx")
+
+[node name="Label" type="Label" parent="." unique_id=1136987524]
+layout_mode = 1
+offset_left = 136.0
+offset_right = 704.0
+offset_bottom = 136.0
+text = "NAME
+HEALTH
+LEVEL"

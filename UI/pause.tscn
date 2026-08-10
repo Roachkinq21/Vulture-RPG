@@ -75,10 +75,9 @@ theme_override_constants/separation = 35
 [node name="TabContainer" type="TabContainer" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer" unique_id=1040316077]
 layout_mode = 2
 theme_override_constants/tab_separation = 3
-current_tab = 1
+current_tab = 0
 
 [node name="Gameplay" type="VBoxContainer" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/TabContainer" unique_id=1156639640]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -111,6 +110,7 @@ popup/item_2/text = "Hard"
 popup/item_2/id = 2
 
 [node name="Graphics" type="VBoxContainer" parent="MarginContainer/ColorRect/MarginContainer/VBoxContainer/TabContainer" unique_id=1611705696]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
