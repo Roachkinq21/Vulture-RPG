@@ -24,6 +24,8 @@ func install_sounds(node : Node) -> void:
 	for child in node.get_children():
 		if child is Button:
 			child.mouse_entered.connect(ui_sfx_play.bind(&"bong_001"))
+			if child.is_in_group("BackButton"):
+				child.pressed.connect(ui_sfx_play.bind(&"drop_002"))
 			child.pressed.connect(ui_sfx_play.bind(&"select_007"))
 		install_sounds(child)
 

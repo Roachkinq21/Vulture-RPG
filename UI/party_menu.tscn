@@ -45,19 +45,19 @@ layout_mode = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/BoxContainer" unique_id=1715531558]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="MarginContainer/Panel/MarginContainer/BoxContainer/VBoxContainer" unique_id=402880743]
+[node name="PartyButton" type="Button" parent="MarginContainer/Panel/MarginContainer/BoxContainer/VBoxContainer" unique_id=402880743 groups=["BackButton"]]
 layout_mode = 2
 text = "Party"
 
-[node name="Button2" type="Button" parent="MarginContainer/Panel/MarginContainer/BoxContainer/VBoxContainer" unique_id=418161980]
+[node name="InventoryButton" type="Button" parent="MarginContainer/Panel/MarginContainer/BoxContainer/VBoxContainer" unique_id=418161980]
 layout_mode = 2
 text = "Inventory"
 
-[node name="Button3" type="Button" parent="MarginContainer/Panel/MarginContainer/BoxContainer/VBoxContainer" unique_id=1930033056]
+[node name="SpellsButton" type="Button" parent="MarginContainer/Panel/MarginContainer/BoxContainer/VBoxContainer" unique_id=1930033056]
 layout_mode = 2
 text = "Spells"
 
-[node name="Button4" type="Button" parent="MarginContainer/Panel/MarginContainer/BoxContainer/VBoxContainer" unique_id=1481868787]
+[node name="ExitButton" type="Button" parent="MarginContainer/Panel/MarginContainer/BoxContainer/VBoxContainer" unique_id=1481868787]
 layout_mode = 2
 text = "Exit
 "
@@ -67,6 +67,7 @@ layout_mode = 2
 theme_override_constants/separation = 29
 
 [node name="Party" type="BoxContainer" parent="MarginContainer/Panel/MarginContainer/BoxContainer" unique_id=985291191]
+visible = false
 layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/BoxContainer/Party" unique_id=76541598]

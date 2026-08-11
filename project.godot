@@ -44,6 +44,10 @@ folder_colors={
 "res://UI/": "green"
 }
 
+[global_group]
+
+BackButton=""
+
 [input]
 
 up={
