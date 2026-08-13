@@ -68,38 +68,40 @@ func _input(event: InputEvent) -> void:
 		return
 	
 	## MOVEMENT ##
-	elif Input.is_action_pressed("up") and not shape_cast_3d_front.is_colliding():
-		tween = get_tree().create_tween().set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_IN_OUT)
-		tween.tween_property(self,"position", (position + STEP * -self.get_global_transform().basis.z), STEP_DER)
+
+	if !pause_is_on:
+		if Input.is_action_pressed("up") and not shape_cast_3d_front.is_colliding():
+			tween = get_tree().create_tween().set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_IN_OUT)
+			tween.tween_property(self,"position", (position + STEP * -self.get_global_transform().basis.z), STEP_DER)
+			
+			await tween.finished
+			_check_encounter()
+			_item_tick()
+			
+		elif Input.is_action_pressed("down") and not shape_cast_3d_3_back.is_colliding():
+			tween = get_tree().create_tween().set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_IN_OUT)
+			tween.tween_property(self,"position", (position + STEP * self.get_global_transform().basis.z), STEP_DER)
+			
+			await tween.finished
+			_check_encounter()
+			_item_tick()
 		
-		await tween.finished
-		_check_encounter()
-		_item_tick()
+		elif Input.is_action_pressed("strafeleft") and not shape_cast_3d_4_left.is_colliding():
+			tween = get_tree().create_tween().set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_IN_OUT)
+			tween.tween_property(self,"position", (position - STEP * get_global_transform().basis.x), STEP_DER)
 		
-	elif Input.is_action_pressed("down") and not shape_cast_3d_3_back.is_colliding():
-		tween = get_tree().create_tween().set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_IN_OUT)
-		tween.tween_property(self,"position", (position + STEP * self.get_global_transform().basis.z), STEP_DER)
+		elif Input.is_action_pressed("straferight") and not shape_cast_3d_2_right.is_colliding():
+			tween = get_tree().create_tween().set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_IN_OUT)
+			tween.tween_property(self,"position", (position + STEP * get_global_transform().basis.x), STEP_DER)
 		
-		await tween.finished
-		_check_encounter()
-		_item_tick()
-	
-	elif Input.is_action_pressed("strafeleft") and not shape_cast_3d_4_left.is_colliding():
-		tween = get_tree().create_tween().set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_IN_OUT)
-		tween.tween_property(self,"position", (position - STEP * get_global_transform().basis.x), STEP_DER)
-	
-	elif Input.is_action_pressed("straferight") and not shape_cast_3d_2_right.is_colliding():
-		tween = get_tree().create_tween().set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_IN_OUT)
-		tween.tween_property(self,"position", (position + STEP * get_global_transform().basis.x), STEP_DER)
-	
-	## ROTATION ##
-	elif Input.is_action_pressed("left"):
-		tween = get_tree().create_tween().set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_IN_OUT)
-		tween.tween_property(self, "rotation_degrees:y", self.rotation_degrees.y + ROTATE, STEP_DER)
-	
-	elif Input.is_action_pressed("right"):
-		tween = get_tree().create_tween().set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_IN_OUT)
-		tween.tween_property(self, "rotation_degrees:y", self.rotation_degrees.y - ROTATE, STEP_DER)
+		## ROTATION ##
+		elif Input.is_action_pressed("left"):
+			tween = get_tree().create_tween().set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_IN_OUT)
+			tween.tween_property(self, "rotation_degrees:y", self.rotation_degrees.y + ROTATE, STEP_DER)
+		
+		elif Input.is_action_pressed("right"):
+			tween = get_tree().create_tween().set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_IN_OUT)
+			tween.tween_property(self, "rotation_degrees:y", self.rotation_degrees.y - ROTATE, STEP_DER)
 
 
 

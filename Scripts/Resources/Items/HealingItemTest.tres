@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Healing_Item" format=3 uid="uid://cqhqxngwhdjgs"]
+
+[ext_resource type="Script" uid="uid://caaeee8b3ppud" path="res://Scripts/Resources/Items/HealingItem.gd" id="1_lho87"]
+[ext_resource type="Texture2D" uid="uid://mumit7021bt0" path="res://icon.svg" id="2_vusfp"]
+
+[resource]
+script = ExtResource("1_lho87")
+item_type = 1
+texture = ExtResource("2_vusfp")
+metadata/_custom_type_script = "uid://caaeee8b3ppud"

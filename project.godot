@@ -38,6 +38,7 @@ project/assembly_name="Vulture Hospital"
 folder_colors={
 "res://Audio/": "red",
 "res://Audio/SFX/": "red",
+"res://Items/": "purple",
 "res://Levels/": "pink",
 "res://Scripts/": "blue",
 "res://Scripts/Global/": "pink",
@@ -47,6 +48,7 @@ folder_colors={
 [global_group]
 
 BackButton=""
+Player=""
 
 [input]
 
