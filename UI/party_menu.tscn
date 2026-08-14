@@ -67,6 +67,7 @@ layout_mode = 2
 theme_override_constants/separation = 29
 
 [node name="Party" type="BoxContainer" parent="MarginContainer/Panel/MarginContainer/BoxContainer" unique_id=985291191]
+visible = false
 layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/BoxContainer/Party" unique_id=76541598]
@@ -83,6 +84,21 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="PartyMemberProfile2" parent="MarginContainer/Panel/MarginContainer/BoxContainer/Party/VBoxContainer" unique_id=1946476503 instance=ExtResource("2_khh37")]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/BoxContainer" unique_id=387530528]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="MarginContainer/Panel/MarginContainer/BoxContainer/VBoxContainer2" unique_id=1143388702]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="Panel2" type="Panel" parent="MarginContainer/Panel/MarginContainer/BoxContainer/VBoxContainer2" unique_id=4262173]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="Panel3" type="Panel" parent="MarginContainer/Panel/MarginContainer/BoxContainer/VBoxContainer2" unique_id=2089444521]
+custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 
 [node name="SoundManager" parent="." unique_id=802041801 instance=ExtResource("2_dfvqk")]

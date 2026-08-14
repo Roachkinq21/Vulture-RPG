@@ -26,6 +26,7 @@ var latest_encounter : int
 @onready var world: Node3D = $".."
 
 @onready var pauseMenu: Control = $CanvasLayer/PauseMenu
+@onready var partyMenu: Control = $CanvasLayer/PartyMenu
 
 @onready var party_manager : Node = $Party_Manager
 
@@ -51,7 +52,9 @@ func _ready() -> void:
 
 	pause_is_on = false
 	pauseMenu.hide()
+	partyMenu.hide()
 	pauseMenu.offset_transform_position_ratio.y = 1
+	partyMenu.offset_transform_position_ratio.x = 1
 
 	if party_manager.get_child_count() > 0 :
 
@@ -123,6 +126,20 @@ func _input(event: InputEvent) -> void:
 			tween.tween_property(pauseMenu, "offset_transform_position_ratio:y", 1, 0.5)
 			await tween.finished
 			pauseMenu.hide()
+			pause_is_on = false
+
+	if Input.is_action_just_pressed("Tab"):
+		if !pause_is_on:
+			partyMenu.show()
+			tween = get_tree().create_tween().set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_OUT)
+			tween.tween_property(partyMenu, "offset_transform_position_ratio:x", 0, 0.5)
+			await tween.finished
+			pause_is_on = true
+		else:
+			tween = get_tree().create_tween().set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_IN_OUT)
+			tween.tween_property(partyMenu, "offset_transform_position_ratio:x", 1, 0.5)
+			await tween.finished
+			partyMenu.hide()
 			pause_is_on = false
 
 

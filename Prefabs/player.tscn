@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://cm5hojtanvcxj" path="res://player.gd" id="1_5wxv7"]
 [ext_resource type="PackedScene" uid="uid://b3vvksa0jfsto" path="res://UI/ActionTest.tscn" id="1_y6xdh"]
 [ext_resource type="PackedScene" uid="uid://dbq5gh85wckc1" path="res://UI/pause.tscn" id="3_y5hcb"]
+[ext_resource type="Script" uid="uid://cgrhanfljw8hj" path="res://Scripts/Global/Inventory.gd" id="4_knrd4"]
+[ext_resource type="Script" uid="uid://b4dj4qbsf7q1o" path="res://Scripts/Resources/Items/Items.gd" id="5_hck1p"]
+[ext_resource type="PackedScene" uid="uid://knib70isfc4w" path="res://UI/party_menu.tscn" id="6_hck1p"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3eola"]
 
@@ -47,9 +50,16 @@ distance_fade_enabled = true
 
 [node name="Party_Manager" type="Node" parent="." unique_id=1103590458]
 
+[node name="InventoryManager" type="Node" parent="." unique_id=2050327472]
+script = ExtResource("4_knrd4")
+items = Array[ExtResource("5_hck1p")]([null])
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1208950183]
 
 [node name="Control" parent="CanvasLayer" unique_id=868915965 instance=ExtResource("1_y6xdh")]
 
 [node name="PauseMenu" parent="CanvasLayer" unique_id=585479524 instance=ExtResource("3_y5hcb")]
+offset_transform_enabled = true
+
+[node name="PartyMenu" parent="CanvasLayer" unique_id=2085440159 instance=ExtResource("6_hck1p")]
 offset_transform_enabled = true
