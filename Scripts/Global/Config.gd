@@ -20,6 +20,9 @@ func store_default_configs() -> void:
 	config.set_value("SDFGI_Setting", "toggled", false)
 	config.save(CONFIG_PATH)
 
+func _input(event: InputEvent) -> void:
+	if Input.is_action_pressed("PowerQuit"):
+		get_tree().quit()
 
 #region VOLUME CONTROl
 
@@ -45,24 +48,28 @@ func set_SFX_volume(volume : float) -> void:
 
 #region GRAPHICS CONTROl
 
-func get_SSR_Setting():
-	pass
-func set_SSR_Setting():
-	pass
+func get_SSR_Setting() -> bool:
+	return bool(config.get_value("SSR_Setting", "toggled", false))
+func set_SSR_Setting(toggled : bool):
+	config.set_value("SSR_Setting", "toggled", toggled)
+	config.save(CONFIG_PATH)
 
 func get_SSAO_Setting():
-	pass
-func set_SSAO_Setting():
-	pass
+	return bool(config.get_value("SSAO_Setting", "toggled", false))
+func set_SSAO_Setting(toggled : bool):
+	config.set_value("SSAO_Setting", "toggled", toggled)
+	config.save(CONFIG_PATH)
 
-func get_SSIL_Setting():
-	pass
-func set_SSIL_Setting():
-	pass
+func get_SSIL_Setting() -> bool:
+	return bool(config.get_value("SSIL_Setting", "toggled", false))
+func set_SSIL_Setting(toggled : bool):
+	config.set_value("SSIL_Setting", "toggled", toggled)
+	config.save(CONFIG_PATH)
 
-func get_SDFGI_Setting():
-	pass
-func set_SDFGI_Setting():
-	pass
+func get_SDFGI_Setting() -> bool:
+	return bool(config.get_value("SDFGI_Setting", "toggled", false))
+func set_SDFGI_Setting(toggled : bool):
+	config.set_value("SDFGI_Setting", "toggled", toggled)
+	config.save(CONFIG_PATH)
 
 #endregion

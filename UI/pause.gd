@@ -14,28 +14,30 @@ extends Control
 var master_sound_var
 var SFX_sound_var
 
-func _ready() -> void:	
+func _ready() -> void:
 	master_bus.value = Config.get_master_volume()
 	sfx_bus.value = Config.get_SFX_volume()
 
-	
+	ssr_button.button_pressed = Config.get_SSR_Setting()
+	ssao_button.button_pressed = Config.get_SSAO_Setting()
+	ssil_button.button_pressed = Config.get_SSIL_Setting()
+	sdfgi_button.button_pressed = Config.get_SDFGI_Setting()
 
+func _on_ssr_button_toggled(toggled: bool) -> void:
+	WorldSettings.ssr_set = toggled
+	Config.set_SSR_Setting(toggled)
 
+func _on_ssao_button_toggled(toggled: bool) -> void:
+	WorldSettings.SSAOSet = toggled
+	Config.set_SSAO_Setting(toggled)
 
-func _on_ssr_button_toggled(toggled_on: bool) -> void:
-	WorldSettings.ssr_set = toggled_on
+func _on_ssil_button_toggled(toggled: bool) -> void:
+	WorldSettings.SSILSet = toggled
+	Config.set_SSIL_Setting(toggled)
 
-
-func _on_ssao_button_toggled(toggled_on: bool) -> void:
-	WorldSettings.SSAOSet = toggled_on
-
-
-func _on_ssil_button_toggled(toggled_on: bool) -> void:
-	WorldSettings.SSILSet = toggled_on
-
-
-func _on_sdfgi_button_toggled(toggled_on: bool) -> void:
-	WorldSettings.SDFGISet = toggled_on
+func _on_sdfgi_button_toggled(toggled: bool) -> void:
+	WorldSettings.SDFGISet = toggled
+	Config.set_SDFGI_Setting(toggled)
 
 
 func _on_master_bus_value_changed(value: float) -> void:
