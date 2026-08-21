@@ -35,7 +35,7 @@ var pause_is_on : bool
 
 #region ## PARTY SETTINGS ##
 
-@export var party : Array = []
+@export var party : Array = [Battler]
 
 #endregion
 
@@ -60,6 +60,7 @@ func _ready() -> void:
 
 		for i in party:
 			party_manager.append(i)
+	
 	
 	
 func _physics_process(delta: float) -> void:

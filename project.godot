@@ -24,6 +24,7 @@ buses/default_bus_layout="uid://che7jejowsxii"
 WorldSettings="*uid://ps8luwl0db10"
 BattleManager="*uid://dd5w26obbxu6m"
 Config="*uid://bl34cmpa5pcve"
+PartyGlobal="*uid://cplxuy640ilb2"
 
 [display]
 
